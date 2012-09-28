@@ -18,6 +18,10 @@ test:
 test_saucelabs:
 	./node_modules/.bin/nodeunit test/saucelabs/*-test.coffee
 
+test_browserify:
+	./node_modules/.bin/browserify test/browserify/test.js -o test/browserify/bundle.js
+	node test/browserify/server.js
+
 # remove all the generated js
 cleanGenJs:
 	@rm -f test/common/*.js test/unit/*.js test/saucelabs/*.js
@@ -29,4 +33,4 @@ compile2js:
 compile2js_watch:
 	./node_modules/.bin/coffee --compile --watch $(TEST_DIR)
 
-.PHONY: test compile2js compile2js_watch cleanGenJs DEFAULT
+.PHONY: test test_browserify compile2js compile2js_watch cleanGenJs DEFAULT
