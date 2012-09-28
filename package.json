@@ -24,6 +24,8 @@
     ,"express": "2.x"
     ,"gleak": "latest"
     ,"imageinfo": "latest"
+    ,"ecstatic": "*"
+    ,"browserify": "*"
   }
   , "scripts" : {
     "test": "make test_saucelabs"
